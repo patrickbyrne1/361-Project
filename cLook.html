@@ -259,10 +259,39 @@
                 "<li>Continent: " + continent + "</li>" +
                 "<li>Population: " + population + "</li>" +
                 "</ul>";
+            
+           // var url = https://cors-anywhere.herokuapp.com/https://wiki-text-scraper.herokuapp.com/wiki/" + country + "/infobox";
+
+           // fetch(`$(window.location`, ) {
+
+           // }
+
+          
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200) {
+                //xmlhttp.onload = function () {
+                //if (this.status == 200) {
+                    console.log("Check this...\n")
+                    console.log(this.status);
+                    console.log(this.responseText);
+                    console.log("OVER\n\n");
+                   // var myObj = JSON.parse(this.responseText);
+                   // console.log(myObj);
+                
+                }
+            }; 
+
+            xmlhttp.open("GET", "https://192.168.0.133:5000/wiki/" + country + "/infobox", true);
+            //xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://wiki-text-scraper.herokuapp.com/wiki/" + country + "/infobox", true);
+        // xmlhttp.open("GET", "https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20200101&end=20200630", true);
+            xmlhttp.send();
+          
         }
+   
 
         window.onload = function () {
-            updateCountry("AU") // Default to TX 
+            updateCountry("Bulgaria") // Default to TX 
         };
 
     

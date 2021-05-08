@@ -5,8 +5,14 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
+
+
+
 # create the application object
 app = Flask(__name__)
+
+
+
 
 #app.config['SERVER_NAME'] = 'http://dogwater.org:5000'
 
@@ -23,8 +29,10 @@ def wiki(title, section):
     #global stud_name
     return text
 
-@app.route('/wiki/<title>/infobox')
+@app.route('/wiki/<title>/infobox', methods=["GET"])
 def wikibox(title):
+
+    
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
     soup = BeautifulSoup(site.content, 'html.parser')
     text = ''
@@ -40,6 +48,8 @@ def wikibox(title):
             #items.append(dataStr)
             text += dataStr
         #text += "\n"
+    response = jsonify(text)
+    response.headers.add("Access-Control-Allow-Origin", "*")
     return text
     #return json.dumps(items)
 
@@ -68,5 +78,5 @@ def wikitable2(title):
     return json.dumps(tableList)
 
 
-#if __name__ == "__main__":
-#    app.run(host="0.0.0.0")
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
