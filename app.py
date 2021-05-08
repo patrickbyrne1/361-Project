@@ -20,6 +20,21 @@ CORS(app)
 
 # UPDATE: changed parser from lxml to html.parser
 
+@app.route('wiki/<title>/coords')
+def coords(title):
+    site = requests.get('https://en.wikipedia.org/wiki/' + title)
+    soup = BeautifulSoup(site.content, 'html.parser')
+    soup = BeautifulSoup(source, 'html.parser')
+
+    latitude = soup.find('span', class_='latitude').text
+    longitude = soup.find('span', class_='longitude').text
+    response = {
+        "latitude":latitude,
+        "longitude":longitude
+    }
+    return response
+
+
 @app.route('/wiki/<title>/<section>')
 def wiki(title, section):
     text = "" + section
