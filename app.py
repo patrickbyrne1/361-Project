@@ -5,12 +5,13 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
+from flask_cors import CORS
 
 
 
 # create the application object
 app = Flask(__name__)
-
+CORS(app)
 
 
 
@@ -49,7 +50,7 @@ def wikibox(title):
             text += dataStr
         #text += "\n"
     response = jsonify(text)
-    response.headers.add("Access-Control-Allow-Origin", "*")
+    #response.headers.add("Access-Control-Allow-Origin", "*")
     return text
     #return json.dumps(items)
 
