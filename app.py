@@ -11,11 +11,13 @@ app = Flask(__name__)
 #app.config['SERVER_NAME'] = 'http://dogwater.org:5000'
 
 
+# UPDATE: changed parser from lxml to html.parser
+
 @app.route('/wiki/<title>/<section>')
 def wiki(title, section):
     text = "" + section
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     for para in soup.find_all('p'):
         text += para.text
     #global stud_name
@@ -24,7 +26,7 @@ def wiki(title, section):
 @app.route('/wiki/<title>/infobox')
 def wikibox(title):
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     text = ''
     #items = []
     regex = re.compile('infobox.*')
@@ -45,7 +47,7 @@ def wikibox(title):
 def wikitable(title, identifier):
     tableStuff = ""
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     
     for stuff in soup.find_all('table', {"class":identifier}):
         tableStuff += stuff.get_text()
@@ -57,7 +59,7 @@ def wikitable(title, identifier):
 def wikitable2(title):
     tableStuff = ""
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     tableList = []
  
     for stuff in soup.find_all('table'):
