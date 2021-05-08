@@ -24,8 +24,7 @@ CORS(app)
 def coords(title):
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
     soup = BeautifulSoup(site.content, 'html.parser')
-    soup = BeautifulSoup(source, 'html.parser')
-
+    
     latitude = soup.find('span', class_='latitude').text
     longitude = soup.find('span', class_='longitude').text
     response = {
