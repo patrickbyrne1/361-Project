@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- use the minified versions of bootstrap even if you download it and run it from server -->
+    <!--link rel="stylesheet" href="style.css"-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <title>Country Lookup</title>
+    
+</head>
+<body>
+    <!-- citation for bootstrap site -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <!-- add navbar-brand AFTER doing list and doing colors above. This is the brand and sep from list-->
+        <!-- this button should be added when showing the Toggler hamburger collapsable menu -->
+        <!-- originally the anchor tag was right above the ul tag -->
+        <!-- putting it here allows the brand to be on left and menu to be on right -->
+        <a class="navbar-brand" href="">Country Lookup</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item"> <!-- add active to class to make it the active link -->
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Quality of Life</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+
+        <!-- this class allows for collapsable navbar.  Also need an id so it knows which part to collapse -->
+        <!-- show how where you place the div is really important.  This needs to be moved after the brand anchor tag -->
+        
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <!-- anchor tag was originally here. It won't show up when collapsed-->
+            <ul class="navbar-nav  ml-auto">
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Africa
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="states">
+                        <a class="dropdown-item stateTag" href="#" data-value="AL">Alabama</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AK">Alaska</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AZ">Arizona</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AR">Arkansas</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CA">California</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CO">Colorado</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CT">Connecticut</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="DE">Delaware</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="FL">Florida</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="GA">Georgia</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="HI">Hawaii</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="ID">Idaho</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IL">Illinois</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IN">Indiana</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IA">Iowa</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="TX">Texas</a>
+
+                        
+                    </div>
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Asia
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="states">
+                        <a class="dropdown-item stateTag" href="#" data-value="AL">Alabama</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AK">Alaska</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AZ">Arizona</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AR">Arkansas</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CA">California</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CO">Colorado</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CT">Connecticut</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="DE">Delaware</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="FL">Florida</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="GA">Georgia</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="HI">Hawaii</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="ID">Idaho</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IL">Illinois</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IN">Indiana</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IA">Iowa</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="TX">Texas</a>
+
+                        
+                    </div>
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Australia and Oceania
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="states">
+                        <a class="dropdown-item countryTag" href="#" data-value="AU">Australia</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="FI">Fiji</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="KI">Kiribati</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="MA">Marshall Islands</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="MI">Micronesia</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="NA">Nauru</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="NZ">New Zealand</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="PA">Palau</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="PN">Papua New Guinea</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="SA">Samoa</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="SI">Solomon Islands</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="TO">Tonga</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="TU">Tuvalu</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="VA">Vanuatu</a>
+                       
+
+                        
+                    </div>
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Europe
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="states">
+                        <a class="dropdown-item countryTag" href="#" data-value="AL">Alabama</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="AK">Alaska</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="AZ">Arizona</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="AR">Arkansas</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="CA">California</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="CO">Colorado</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="CT">Connecticut</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="DE">Delaware</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="FL">Florida</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="GA">Georgia</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="HI">Hawaii</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="ID">Idaho</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="IL">Illinois</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="IN">Indiana</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="IA">Iowa</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="TX">Texas</a>
+
+                        
+                    </div>
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      North America
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="states">
+                        <a class="dropdown-item stateTag" href="#" data-value="AL">Alabama</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AK">Alaska</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AZ">Arizona</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="AR">Arkansas</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CA">California</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CO">Colorado</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="CT">Connecticut</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="DE">Delaware</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="FL">Florida</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="GA">Georgia</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="HI">Hawaii</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="ID">Idaho</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IL">Illinois</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IN">Indiana</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="IA">Iowa</a>
+                        <a class="dropdown-item stateTag" href="#" data-value="TX">Texas</a>
+
+                        
+                    </div>
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      South America
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="states">
+                        <a class="dropdown-item countryTag" href="#" data-value="AL">Alabama</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="AK">Alaska</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="AZ">Arizona</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="CA">California</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="CO">Colorado</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="CT">Connecticut</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="DE">Delaware</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="AR">Arkansas</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="FL">Florida</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="GA">Georgia</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="HI">Hawaii</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="ID">Idaho</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="IL">Illinois</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="IN">Indiana</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="IA">Iowa</a>
+                        <a class="dropdown-item countryTag" href="#" data-value="TX">Texas</a>
+
+                        
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br><br>
+    <div class="container-fluid text-center">
+        <div class="border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
+        
+            <div class="col-auto col-md-3" id="cInfo">
+                
+            </div>
+        </div>
+        <br>
+        <div class="border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
+            <div class="content mt-5 text-align" id="cMap">
+                Map Area
+                
+            </div>
+        </div>
+        <div class="content mt-5 text-center">
+
+            <p>Data courtesy of <a href="https://en.wikipedia.org/">Wikipedia</a>.</p>
+        </div>    
+    
+    </div>
+    <!-- is this dropdown-toggle needed? -->
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+    <script>
+
+        function updateCountry(country) {
+            console.log(country);
+            var name = "Australia";
+            var continent = "Australia and Oceania";
+            var population = "23232323";
+
+            document.getElementById("cInfo").innerHTML = "<ul>" + 
+                "<li><h3>Name: " + name + "</h3></li>" +
+                "<li>Continent: " + continent + "</li>" +
+                "<li>Population: " + population + "</li>" +
+                "</ul>";
+        }
+
+        window.onload = function () {
+            updateCountry("AU") // Default to TX 
+        };
+
+    
+        $(".countryTag").click(function(){
+            var country=$(this).data("value");
+            updateCountry(country);
+        });
+
+
+    </script>
+</body>
+</html>
