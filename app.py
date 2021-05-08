@@ -1,5 +1,5 @@
 # import the Flask class from the flask module
-from flask import Flask, render_template, redirect, url_for, request, session, flash, jsonify
+from flask import Flask, render_template, redirect, url_for, request, session, flash, jsonify, make_response
 import datetime, random, json
 from bs4 import BeautifulSoup
 import requests
@@ -27,11 +27,11 @@ def coords(title):
     
     latitude = soup.find('span', class_='latitude').text
     longitude = soup.find('span', class_='longitude').text
-    response = {
+    coord_object = {
         "latitude":latitude,
         "longitude":longitude
     }
-    return response
+    return make_response(jsonify(coord_object), 200)
 
 
 @app.route('/wiki/<title>/<section>')
