@@ -28,7 +28,7 @@ def coords(title):
     soup = BeautifulSoup(site.content, 'html.parser')
     
     latitude = soup.find('span', class_='latitude').text
-    longitude = soup.find('span', class_='longitude').
+    longitude = soup.find('span', class_='longitude').text
     if latitude is None or longitude is None:
         return make_response(jsonify(Error="No coordinates found."), 404)
 
