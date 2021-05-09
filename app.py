@@ -118,7 +118,7 @@ def wikitables(title):
                             txt = txt.strip()
                             if len(txt) > 0 and len(txt) < 100:
                                 row.append(txt)
-                        if row:
+                        if row and len(row) < 100:
                             tableRows.append(row)
                     t_rows = nextNode.find_all('tr')
                     
@@ -131,7 +131,7 @@ def wikitables(title):
                             txt = txt.strip()
                             if len(txt) > 0 and len(txt) < 100:
                                 row.append(txt)
-                        if row:
+                        if row and len(row) < 100:
                             tableRows.append(row)
                     tableDict.update({header.text:tableRows})
                     break
