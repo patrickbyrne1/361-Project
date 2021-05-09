@@ -39,6 +39,7 @@ def coords(title):
     return make_response(jsonify(coord_object), 200)
 
 
+
 # Get Paragraphs for a Title
 @app.route('/wiki/<title>')
 def wikiparas(title):
@@ -47,7 +48,7 @@ def wikiparas(title):
     count = 0
     nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     divs = soup.find('div', class_="mw-parser-output")
     divs = str(divs)
 
@@ -92,7 +93,7 @@ def wikitables(title):
     tableDict = {}
 
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     for header in soup.find_all('h3'):
             
         nextNode = header
@@ -141,7 +142,7 @@ def wikitables(title):
 @app.route('/wiki/<title>/infobox')
 def wikibox(title):
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     text = ''
     items = []
     regex = re.compile('infobox.*')
