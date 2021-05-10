@@ -274,24 +274,30 @@
                 //if (this.status == 200) {
                     console.log("Check this...\n")
                     console.log(this.status);
-                    console.log(this.responseText);
+                    //console.log(this.responseText);
                     console.log("OVER\n\n");
                     var myObj = JSON.parse(this.responseText);
-                    console.log(myObj);
+                    //console.log(myObj);
+                    console.log(myObj["Geology"]);
+
+                    bitcoinData = [];
+                    //bitcoinData[0] = myObj;
+                    //console.log(Objects.keys(myObj)[0]);
                 
                 }
             }; 
 
             //xmlhttp.open("GET", "https://192.168.0.133:5000/wiki/" + country + "/infobox", true);
             xmlhttp.open("GET", "https://wiki-text-scraper.herokuapp.com/wiki/" + country, true);
-        // xmlhttp.open("GET", "https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20200101&end=20200630", true);
+            
+            // xmlhttp.open("GET", "https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20200101&end=20200630", true);
             xmlhttp.send();
           
         }
    
 
         window.onload = function () {
-            updateCountry("Bulgaria") // Default to TX 
+            updateCountry("Yosemite") // Default to TX 
         };
 
     
