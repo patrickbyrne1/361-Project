@@ -22,28 +22,136 @@
     <title>QoL</title>
 </head>
 <body>
-
-  
+   <!-- citation: Bootstrap navbar from example on https://getbootstrap.com/docs/5.0/components/navbar/-->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <!-- add navbar-brand AFTER doing list and doing colors above. This is the brand and sep from list-->
+    <!-- this button should be added when showing the Toggler hamburger collapsable menu -->
+    <!-- originally the anchor tag was right above the ul tag -->
+    <!-- putting it here allows the brand to be on left and menu to be on right -->
+    <a class="navbar-brand" href="">Country Lookup</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+  <li class="nav-item"> <!-- add active to class to make it the active link -->
+    <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="cLook.html">Country Lookup</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="about.html">About</a>
+  </li>
+</ul>
+</div>
+</nav>
+<br>
+<div class="text-center">
+<h5>Please choose 2 to 5 countries to compare.  When ready, click the submit button below.  Please wait 15 to 20 seconds for results.</h5>
+</div>
+<br>
+<!-- Citation:  Bootstrap checkbox boilerplate: https://getbootstrap.com/docs/5.0/forms/checks-radios/  -->
   <div class="container-fluid">
     <div class="row">
       <div class="col">
         <h1>North America</h1>
 
+
+
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">United States</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Antigua and Barbuda">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Antigua and Barbuda</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-          <label class="form-check-label" for="flexSwitchCheckChecked">Canada</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Bahamas">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Bahamas</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
-          <label class="form-check-label" for="flexSwitchCheckDisabled">Mexico</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Barbados">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Barbados</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Belize">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Belize</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Canada">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Canada</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Costa Rica">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Costa Rica</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Cuba">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Cuba</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Dominica">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Dominica</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Dominican Republic">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Dominican Republic</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="El Salvador">
+          <label class="form-check-label" for="flexSwitchCheckChecked">El Salvador</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Grenada">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Grenada</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Guatemala">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Guatemala</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Haiti">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Haiti</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Honduras">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Honduras</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Jamaica">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Jamaica</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Mexico">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Mexico</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Nicaragua">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Nicaragua</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Panama">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Panama</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Saint Kitts and Nevis">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Saint Kitts and Nevis</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Saint Lucia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Saint Lucia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Saint Vincent and the Grenadines">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Saint Vincent and the Grenadines</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Trinidad and Tobago">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Trinidad and Tobago</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="United States">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">United States</label>
         </div>
       
       </div>
@@ -51,308 +159,847 @@
         <h1>South America</h1>
 
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">United States</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Argentina">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Argentina</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-          <label class="form-check-label" for="flexSwitchCheckChecked">Canada</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Bolivia">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Bolivia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
-          <label class="form-check-label" for="flexSwitchCheckDisabled">Mexico</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Brazil">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Brazil</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
-          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Guatemala</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Chile">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Chile</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Colombia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Colombia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Ecuador">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Ecuador</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Guyana">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Guyana</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Paraguay">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Paraguay</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Peru">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Peru</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Suriname">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Suriname</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Uruguay">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Uruguay</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Venezuala">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Venezuela</label>
         </div>
       </div>
       <div class="col">
         <h1>Europe</h1>
 
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">United States</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Albania">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Albania</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-          <label class="form-check-label" for="flexSwitchCheckChecked">Canada</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Andorra">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Andorra</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
-          <label class="form-check-label" for="flexSwitchCheckDisabled">Mexico</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Armenia">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Armenia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
-          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Guatemala</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Austria">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Austria</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Azerbaijan">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Azerbaijan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Belarus">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Belarus</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Belgium">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Belgium</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Bosnia and Herzegovina">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Bosnia and Herzegovina</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Bulgaria">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Bulgaria</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Croatia">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Croatia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Cyprus">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Cyprus</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Czechia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Czechia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Denmark">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Denmark</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Estonia">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Estonia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Finland">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Finland</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="France">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">France</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Georgia">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Georgia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Germany">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Germany</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Greece">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Greece</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Hungary">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Hungary</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Iceland">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Iceland</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Ireland">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Ireland</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Italy">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Italy</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Kazakhstan">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Kazakhstan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Kosovo">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Kosovo</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Latvia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Latvia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Liechtenstein">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Liechtenstein</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Lithuania">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Lithuania</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Luxembourg">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Luxembourg</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Malta">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Malta</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Moldova">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Moldova</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Monaco">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Monaco</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Montenegro">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Montenegro</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Netherlands">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Netherlands</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="North Macedonia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">North Macedonia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Norway">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Norway</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Poland">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Poland</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Portugal">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Portugal</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Romania">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Romania</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Russia">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Russia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="San Marino">
+          <label class="form-check-label" for="flexSwitchCheckDefault">San Marino</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Serbia">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Serbia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Slovakia">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Slovakia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Slovenia">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Slovenia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Spain">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Spain</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Sweden">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Sweden</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Switzerland">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Switzerland</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Turkey">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Turkey</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Ukraine">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Ukraine</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="United Kingdom">
+          <label class="form-check-label" for="flexSwitchCheckChecked">United Kingdom</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Vatican City">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Vatican City</label>
         </div>
       </div>
       
       <div class="col">
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="width:75%;">
+        <!--a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="width:75%;">
           Africa
-        </a>
-        <div class="collapse" id="collapseExample">
+        </a-->
+        <!--div class="collapse" id="collapseExample"-->
         <h1>Africa</h1>
 
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="country" value="Algeria">
           <label class="form-check-label" for="flexSwitchCheckDefault">Algeria</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="country" value="Angola">
           <label class="form-check-label" for="flexSwitchCheckChecked">Angola</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Benin">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Benin</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Botswana">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Botswana</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Burkina Faso">
           <label class="form-check-label" for="flexSwitchCheckDefault">Burkina Faso</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Cabo Verde">
           <label class="form-check-label" for="flexSwitchCheckChecked">Cabo Verde</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Cameroon">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Cameroon</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Central African Republic">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Central African Republic</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Chad">
           <label class="form-check-label" for="flexSwitchCheckDefault">Chad</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Comoros">
           <label class="form-check-label" for="flexSwitchCheckChecked">Comoros</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Congo">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Congo</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Cote d'Ivoire">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Cote d'Ivoire</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Djibouti">
           <label class="form-check-label" for="flexSwitchCheckDefault">Djibouti</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-          <label class="form-check-label" for="flexSwitchCheckChecked">DR Congo</label>
-        </div>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Egypt">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Egypt</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Equatorial Guinea">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Equatorial Guinea</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Eritrea">
           <label class="form-check-label" for="flexSwitchCheckDefault">Eritrea</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Eswatini">
           <label class="form-check-label" for="flexSwitchCheckChecked">Eswatini</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Ethiopia">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Ethiopia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Gabon">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Gabon</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Gambia">
           <label class="form-check-label" for="flexSwitchCheckDefault">Gambia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Ghana">
           <label class="form-check-label" for="flexSwitchCheckChecked">Ghana</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Guinea">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Guinea</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Guinea-Bissau">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Guinea-Bissau</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Kenya">
           <label class="form-check-label" for="flexSwitchCheckDefault">Kenya</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Lesotho">
           <label class="form-check-label" for="flexSwitchCheckChecked">Lesotho</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Liberia">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Liberia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Libya">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Libya</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Madagascar">
           <label class="form-check-label" for="flexSwitchCheckDefault">Madagascar</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Malawi">
           <label class="form-check-label" for="flexSwitchCheckChecked">Malawi</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Mali">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Mali</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Mauritania">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Mauritania</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Mauritius">
           <label class="form-check-label" for="flexSwitchCheckDefault">Mauritius</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Morocco">
           <label class="form-check-label" for="flexSwitchCheckChecked">Morocco</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Mozambique">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Mozambique</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Namibia">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Namibia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Niger">
           <label class="form-check-label" for="flexSwitchCheckDefault">Niger</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Nigeria">
           <label class="form-check-label" for="flexSwitchCheckChecked">Nigeria</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Rwanda">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Rwanda</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Sao Tome & Principe">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Sao Tome & Principe</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Senegal">
           <label class="form-check-label" for="flexSwitchCheckDefault">Senegal</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Seychelles">
           <label class="form-check-label" for="flexSwitchCheckChecked">Seychelles</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Sierra Leone">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Sierra Leone</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Somalia">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Somalia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="South Africa">
           <label class="form-check-label" for="flexSwitchCheckDefault">South Africa</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="South Sudan">
           <label class="form-check-label" for="flexSwitchCheckChecked">South Sudan</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Sudan">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Sudan</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input"  type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Tanzania">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Tanzania</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Togo">
           <label class="form-check-label" for="flexSwitchCheckDefault">Togo</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Tunisia">
           <label class="form-check-label" for="flexSwitchCheckChecked">Tunisia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Uganda">
           <label class="form-check-label" for="flexSwitchCheckDisabled">Uganda</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Zambia">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Zambia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled"name="abc" value="Zimbabwe">
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Zimbabwe</label>
         </div>
       </div>
-      </div>
+      <!--/div-->
       <div class="col">
         <h1>Asia</h1>
 
         <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Afghanistan">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Afghanistan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Armenia">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Armenia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Azerbaijan">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Azerbaijan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Bahrain">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Bahrain</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Bangladesh">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Bangladesh</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Bhutan">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Bhutan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Brunei">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Brunei</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Cambodia">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Cambodia</label>
+        </div>
+        <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">United States</label>
+          <label class="form-check-label" for="flexSwitchCheckDefault">China</label name="abc" value="China">
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-          <label class="form-check-label" for="flexSwitchCheckChecked">Canada</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Cyprus">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Cyprus</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
-          <label class="form-check-label" for="flexSwitchCheckDisabled">Mexico</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Georgia">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Georgia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
-          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Guatemala</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="India">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">India</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Indonesia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Indonesia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Iran">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Iran</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Iraq">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Iraq</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Israel">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Israel</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Japan">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Japan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Jordan">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Jordan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Kazakhstan">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Kazakhstan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Kuwait">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Kuwait</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Kyrqyzstan">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Kyrqyzstan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Laos">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Laos</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Lebanon">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Lebanon</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Malaysia">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Malaysia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Maldives">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Maldives</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Mongolia">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Mongolia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Myanmar">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Myanmar</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Nepal">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Nepal</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="North Korea">
+          <label class="form-check-label" for="flexSwitchCheckDefault">North Korea</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Oman">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Oman</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Pakistan">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Pakistan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Palestine">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Palestine</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Philippines">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Philippines</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Qatar">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Qatar</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Russia">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Russia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Saudi Arabia">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Saudi Arabia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Singapore">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Singapore</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="South Korea">
+          <label class="form-check-label" for="flexSwitchCheckChecked">South Korea</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Sri Lanka">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Sri Lanka</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Syria">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Syria</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Taiwan">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Taiwan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Tajikistan">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Tajikistan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Thailand">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Thailand</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Timor-Leste">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Timor-Leste</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Turkey">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Turkey</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Turkmenistan">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Turkmenistan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="United Arab Emirates">
+          <label class="form-check-label" for="flexSwitchCheckDefault">United Arab Emirates</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Uzbekistan">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Uzbekistan</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Vietnam">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Vietnam</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Yemen">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Yemen</label>
         </div>
       </div>
       <div class="col">
         <h1>Australia and Oceania</h1>
 
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">United States</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Australia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Australia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-          <label class="form-check-label" for="flexSwitchCheckChecked">Canada</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Fiji">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Fiji</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled">
-          <label class="form-check-label" for="flexSwitchCheckDisabled">Mexico</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Kiribati">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Kiribati</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
-          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Guatemala</label>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Marshall Islands">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Marshall Islands</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Micronesia">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Micronesia</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Nauru">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Nauru</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled"name="abc" value="New Zealand">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">New Zealand</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Palau">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Palau</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Papua New Guinea">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Papua New Guinea</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Samoa">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Samoa</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Solomon Islands">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Solomon Islands</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Tonga">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Tonga</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="abc" value="Tuvalu">
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Tuvalu</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" name="abc" value="Vanuatu">
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Vanuatu</label>
         </div>
       </div>
     </div>
   </div>
-  
-  
+  <br><br>
+  <div class="text-right" style="width:95%;">
+        <button type="button" class="btn btn-secondary btn-lg" id="select" onclick="cLook()">Submit</button> <br>  
+  </div>
+  <br>
+  <script>
+    var checkList = [];
+    var countries = [];
+    var isPressed = false;
+
+    
+/*
+    function cLook(){
+      
+      if(!isPressed) {
+        const cb = document.querySelectorAll('input[type="checkbox"]:checked')
+        
+        //console.log("Clicked");
+       // console.log(cb);
+        cb.forEach((checkbox) => {
+            console.log(checkbox.text);
+            countries.push(checkbox.value);
+        });
+        console.log(countries);
+        QoL(countries);
+      }
+      isPressed = true;
+   }
+   */
+  // Citation: https://www.includehelp.com/code-snippets/javascript-print-value-of-all-checked-selected-checkboxes.aspx
+   function cLook(){
+                    var items=document.getElementsByName('abc');
+                    var selectedItems=[];
+                    for(var i=0; i<items.length; i++){
+                        if(items[i].type=='checkbox' && items[i].checked==true)
+                            selectedItems.push(items[i].value); //+=items[i].value+"\n";
+                            console.log(items[i].value);
+                    }
+                    console.log(selectedItems);
+                    //alert(selectedItems);
+                    QoL(selectedItems);
+                }		
+  function QoL(countries) {
+            console.log("Da cunts" + countries);
+            if(countries.length < 2 || countries.length > 5) {
+                alert("Incorrect number of countries.");
+                return;
+            }
+            urlStr = "";
+            for(let i=0; i<countries.length; i++) {
+                if(i == countries.length-1)
+                    urlStr += countries[i];
+                else
+                    urlStr += countries[i] + "/";
+            }
+            console.log(urlStr);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200) {
+                    console.log(this.status);
+                    
+                    var myObj = JSON.parse(this.responseText);
+                    console.log(myObj);
+                    var alertStr = "Quality of Life Results\nHere are the selected countries in order from BEST to WORST quality of life:\n";
+                    for(let i=0; i<myObj.length; i++) {
+                          alertStr += (i+1) + ". " + myObj[i] + "\n";
+                    }
+                    alertStr += "Of the " + myObj.length + " countries, " + myObj[0] + " has the BEST quality of life and is the clear choice."
+                    alert(alertStr);
+                
+                }
+            }; 
+            
+           
+            /*
+            function reqListener() {
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("cInfo").innerHTML = "<ul>" + 
+                "<li><h3>Name: " + name + "</h3></li>" +
+                "<li>Continent: " + continent + "</li>" +
+                "<li>Population: " + myObj["Population"] + "</li>" +
+                "<li>Coordinates: " + myObj["Coordinates"] + "</li>" +
+                "</ul>";
+                //document.getElementById("cInfo").innerHTML = myObj["Population"];
+                //console.log(this.responseText);
+            }
+            */
+            //xmlhttp.addEventListener("load", reqListener);
+            //xmlhttp.open("GET", "http://192.168.0.192:3600/QoL/Thailand/United States/Bulgaria/Angola/India", true);
+            //xmlhttp.open("GET", "http://192.168.0.192:3600/QoL/" + urlStr, true);
+            xmlhttp.open("GET", "http://10.200.37.7:3600/QoL/" + urlStr, true);
+            //xmlhttp.open("GET", "https://wiki-text-scraper.herokuapp.com/wiki/" + country, true);
+            
+            // xmlhttp.open("GET", "https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20200101&end=20200630", true);
+            xmlhttp.send();
+
+            //return population;
+          
+  }
+    
+  </script>
     
 </body>
 </html>

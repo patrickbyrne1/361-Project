@@ -21,7 +21,7 @@
     
 </head>
 <body>
-    <!-- citation for bootstrap site -->
+     <!-- citation: Bootstrap navbar boilerplate from example on https://getbootstrap.com/docs/5.0/components/navbar/-->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <!-- add navbar-brand AFTER doing list and doing colors above. This is the brand and sep from list-->
         <!-- this button should be added when showing the Toggler hamburger collapsable menu -->
@@ -36,13 +36,13 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item"> <!-- add active to class to make it the active link -->
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Quality of Life</a>
+        <a class="nav-link" href="QoL.html">Quality of Life</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="about.html">About</a>
       </li>
     </ul>
   </div>
@@ -59,24 +59,59 @@
                       Africa
                     </a>
                     
-                    <div class="dropdown-menu" aria-labelledby="states">
-                        <a class="dropdown-item stateTag" href="#" data-value="AL">Alabama</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AK">Alaska</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AZ">Arizona</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AR">Arkansas</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CA">California</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CO">Colorado</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CT">Connecticut</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="DE">Delaware</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="FL">Florida</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="GA">Georgia</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="HI">Hawaii</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="ID">Idaho</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IL">Illinois</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IN">Indiana</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IA">Iowa</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="TX">Texas</a>
-
+                    <div class="dropdown-menu" aria-labelledby="Africa">
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Algeria">Algeria</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Angola">Angola</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Benin">Benin</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Botswana">Botswana</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Burkina Faso">Burkina Faso</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Burundi">Burundi</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Cabo Verde">Cabo Verde</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Cameroon">Cameroon</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Central African Republic">Central African Republic</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Chad">Chad</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Comoros">Comoros</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Congo">Congo</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Cote d'Ivoire">Cote d'Ivoire</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Djibouti">Djibouti</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Egypt">Egypt</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Equatorial Guinea">Equitorial Guinea</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Eritrea">Eritrea</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Eswatini">Eswatini</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Ethiopia">Ethiopia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Gabon">Gabon</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Gambia">Gambia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Ghana">Ghana</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Guinea">Guinea</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Guinea-Bissau">Guinea-Bissau</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Kenya">Kenya</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Lesotho">Lesotho</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Liberia">Liberia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Libya">Libya</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Madagascar">Madagascar</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Malawi">Malawi</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Mali">Mali</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Mauritius">Mauritius</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Morocco">Morocco</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Mozambique">Mozambique</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Namibia">Namibia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Niger">Niger</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Nigeria">Nigeria</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Rwanda">Rwanda</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Sao Tome and Principe">Sao Tome and Principe</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Senegal">Senegal</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Seychelles">Seychelles</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Sierra Leone">Sierra Leone</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Somalia">Somalia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="South Africa">South Africa</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="South Sudan">South Sudan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Sudan">Sudan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Tanzania">Tanzania</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Togo">Togo</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Tunisia">Tunisia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Uganda">Uganda</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Zambia">Zambia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Zimbabwe">Zimbabwe</a>               
                         
                     </div>
                     
@@ -85,51 +120,81 @@
                     <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Asia
                     </a>
-                    
-                    <div class="dropdown-menu" aria-labelledby="states">
-                        <a class="dropdown-item stateTag" href="#" data-value="AL">Alabama</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AK">Alaska</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AZ">Arizona</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AR">Arkansas</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CA">California</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CO">Colorado</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CT">Connecticut</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="DE">Delaware</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="FL">Florida</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="GA">Georgia</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="HI">Hawaii</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="ID">Idaho</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IL">Illinois</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IN">Indiana</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IA">Iowa</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="TX">Texas</a>
 
-                        
+                    <div class="dropdown-menu" aria-labelledby="Asia">
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Afghanistan">Afghanistan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Armenia">Armenia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Azerbaijan">Azerbaijan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Bahrain">Bahrain</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Bangladesh">Bangladesh</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Bhutan">Bhutan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Brunei">Brunei</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Cambodia">Cambodia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="China">China</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Cyprus">Cyprus</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Georgia">Georgia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="India">India</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Indonesia">Indonesia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Iran">Iran</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Iraq">Iraq</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Israel">Israel</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Japan">Japan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Jordan">Jordan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Kazakhstan">Kazakhstan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Kuwait">Kuwait</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Kyrgyzstan">Kyrgyzstan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Laos">Laos</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Lebanon">Lebanon</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Malaysia">Malaysia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Maldives">Maldives</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Mongolia">Mongolia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Myanmar">Myanmar</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Nepal">Nepal</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="North Korea">North Korea</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Oman">Oman</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Pakistan">Pakistan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Palestine">Palestine</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Philippines">Philippines</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Qatar">Qatar</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Russia">Russia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Saudi Arabia">Saudi Arabia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Singapore">Singapore</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="South Korea">South Korea</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Sri Lanka">Sri Lanka</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Syria">Syria</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Taiwan">Taiwan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Tajikistan">Tajikistan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Thailand">Thailand</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Timor-Leste">Timor-Leste</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Turkey">Turkey</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Turkmenistan">Turkmenistan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="United Arab Emirates">United Arab Emirates</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Uzbekistan">Uzbekistan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Vietnam">Vietnam</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Asia" data-value="Yemen">Yemen</a>               
+    
                     </div>
-                    
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Australia and Oceania
                     </a>
                     
-                    <div class="dropdown-menu" aria-labelledby="states">
-                        <a class="dropdown-item countryTag" href="#" data-value="AU">Australia</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="FI">Fiji</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="KI">Kiribati</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="MA">Marshall Islands</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="MI">Micronesia</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="NA">Nauru</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="NZ">New Zealand</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="PA">Palau</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="PN">Papua New Guinea</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="SA">Samoa</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="SI">Solomon Islands</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="TO">Tonga</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="TU">Tuvalu</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="VA">Vanuatu</a>
-                       
-
+                    <div class="dropdown-menu" aria-labelledby="Australia">
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Australia">Australia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Fiji">Fiji</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Kiribati">Kiribati</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Marshall Islands">Marshall Islands</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Micronesia">Micronesia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Nauru">Nauru</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="New Zealand">New Zealand</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Palau">Palau</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Papua New Guinea">Papua New Guinea</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Samoa">Samoa</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Solomon">Solomon Islands</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Tonga">Tonga</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Tuvalu">Tuvalu</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Australia" data-value="Vanuatu">Vanuatu</a>
                         
                     </div>
                     
@@ -139,51 +204,89 @@
                       Europe
                     </a>
                     
-                    <div class="dropdown-menu" aria-labelledby="states">
-                        <a class="dropdown-item countryTag" href="#" data-value="AL">Alabama</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="AK">Alaska</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="AZ">Arizona</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="AR">Arkansas</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="CA">California</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="CO">Colorado</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="CT">Connecticut</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="DE">Delaware</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="FL">Florida</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="GA">Georgia</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="HI">Hawaii</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="ID">Idaho</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="IL">Illinois</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="IN">Indiana</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="IA">Iowa</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="TX">Texas</a>
-
-                        
+                    <div class="dropdown-menu" aria-labelledby="Europe">
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Albania">Albania</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Andorra">Andorra</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Armenia">Armenia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Austria">Austria</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Azerbaijan">Azerbaijan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Belarus">Belarus</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Belgium">Belgium</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Bosnia and Herzegovina">Bosnia and Herzegovina</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Bulgaria">Bulgaria</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Croatia">Croatia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Cyprus">Cyprus</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Czechia">Czechia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Denmark">Denmark</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Estonia">Estonia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Finland">Finland</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="France">France</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Georgia">Georgia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Germany">Germany</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Greece">Greece</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Hungary">Hungary</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Iceland">Iceland</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Ireland">Ireland</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Italy">Italy</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Kazakhstan">Kazakhstan</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Kosovo">Kosovo</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Latvia">Latvia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Liechtenstein">Liechtenstein</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Lithuania">Lithuania</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Luxembourg">Luxembourg</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Malta">Malta</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Moldova">Moldova</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Monaco">Monaco</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Montenegro">Montenegro</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Netherlands">Netherlands</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="North Macedonia">North Macedonia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Norway">Norway</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Poland">Poland</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Portugal">Portugal</a>/a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Romania">Romania</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Russia">Russia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="San Marino">San Marino</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Serbia">Serbia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Slovakia">Slovakia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Slovenia">Slovenia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Spain">Spain</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Sweden">Sweden</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Switzerland">Switzerland</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Turkey">Turkey</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Ukraine">Ukraine</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="United Kingdom">United Kingdom</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="Europe" data-value="Vatican City">Vatican City</a>
                     </div>
-                    
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       North America
                     </a>
                     
-                    <div class="dropdown-menu" aria-labelledby="states">
-                        <a class="dropdown-item stateTag" href="#" data-value="AL">Alabama</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AK">Alaska</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AZ">Arizona</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="AR">Arkansas</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CA">California</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CO">Colorado</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="CT">Connecticut</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="DE">Delaware</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="FL">Florida</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="GA">Georgia</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="HI">Hawaii</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="ID">Idaho</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IL">Illinois</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IN">Indiana</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="IA">Iowa</a>
-                        <a class="dropdown-item stateTag" href="#" data-value="TX">Texas</a>
-
+                    <div class="dropdown-menu" aria-labelledby="North America">
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Antigua and Barbuda">Antigua and Barbuda</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Bahamas">Bahamas</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Barbados">Barbados</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Belize">Belize</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Canada">Canada</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Costa Rica">Costa Rica</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Cuba">Cuba</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Dominica">Dominica</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Dominican Republic">Dominican Republic</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="El Salvador">El Salvador</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Grenada">Grenada</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Guatemala">Guatemala</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Haiti">Haiti</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Honduras">Honduras</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Jamaica">Jamaica</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Mexico">Mexico</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Nicaragua">Nicaragua</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Panama">Panama</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Saint Kitts and Nevis">Saint Kitts and Nevis</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Saint Lucia">Saint Lucia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="Trinidad and Tobago">Trinidad and Tobago</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="North America" data-value="United States">United States</a>
                         
                     </div>
                     
@@ -193,24 +296,19 @@
                       South America
                     </a>
                     
-                    <div class="dropdown-menu" aria-labelledby="states">
-                        <a class="dropdown-item countryTag" href="#" data-value="AL">Alabama</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="AK">Alaska</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="AZ">Arizona</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="CA">California</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="CO">Colorado</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="CT">Connecticut</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="DE">Delaware</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="AR">Arkansas</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="FL">Florida</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="GA">Georgia</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="HI">Hawaii</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="ID">Idaho</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="IL">Illinois</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="IN">Indiana</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="IA">Iowa</a>
-                        <a class="dropdown-item countryTag" href="#" data-value="TX">Texas</a>
-
+                    <div class="dropdown-menu" aria-labelledby="South America">
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Argentina">Argentina</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Bolivia">Bolivia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Brazil">Brazil</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Chile">Chile</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Colombia">Colombia</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Ecuador">Ecuador</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Guyana">Guyana</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Paraguay">Paraguay</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Peru">Peru</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Suriname">Suriname</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Uruguay">Uruguay</a>
+                        <a class="dropdown-item countryTag" href="#" aria-label="South America" data-value="Venezuala">Venezuala</a>
                         
                     </div>
                     
@@ -218,19 +316,24 @@
             </ul>
         </div>
     </nav>
-
-    <br><br>
+    <input type="text" placeholder="Search..." id="sBar">
+    <button onclick="searchBar()">GO</button>
+    <br><br><div class="text-center">
+        <h5>Please choose a country from the drop-down menus or by entering it in the search bar.  The country's information will be displayed below.</h5>
+        </div><br>
     <div class="container-fluid text-center">
         <div class="border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
         
-            <div class="col-auto col-md-3" id="cInfo">
+            <div class="col-auto col-lg text-left" id="cInfo">
                 
             </div>
         </div>
         <br>
         <div class="border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
             <div class="content mt-5 text-align" id="cMap">
-                Map Area
+                
+                <iframe width="75%"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500743.6312020535!2d24.422357456064066!3d42.7219294628576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a8fec1c85bf089%3A0xa01269bf4c10!2sBulgaria!5e0!3m2!1sen!2sus!4v1620788661863!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
                 
             </div>
         </div>
@@ -247,18 +350,44 @@
         });
     </script>
     <script>
+        //var population = "";
+        var population = "";
+        var continent = "";
+        var continents = {"Africa":["Algeria","Angola","Benin","Botswana","Burkina Faso","Burundi","Cape Verde","Cameroon",
+                              "Central African Republic","Chad","Comoros","Congo","Cote d'Ivoire","Djibouti","Egypt","Equatorial Guinea",
+                              "Eritrea","Eswatini","Ethiopia","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia",
+                              "Libya","Madagascar","Malawi","Mali","Mauritius","Morocco","Mozambique","Namibia","Niger","Nigeria","Rwanda",
+                              "Sao Tome and Principe","Senegal","Seychelles","Sierra Leone","Somalia","South Africa","South Sudan","Sudan",
+                              "Tanzania","Togo","Tunisia","Uganda","Zambia","Zimbabwe"],
+                           "Asia":["Afghanistan","Armenia","Azerbaijan","Bahrain","Bangladesh","Bhutan","Brunei","Cambodia","China","Cyprus",
+                              "Georgia","India","Indonesia","Iran","Iraq","Israel","Japan","Jordan","Kazakhstan","Kuwait","Kyrgyzstan","Laos",
+                              "Lebanon","Malaysia","Maldives","Mongolia","Myanmar","Nepal","North Korea","Oman","Pakistan","Palestine",
+                              "Philippines","Qatar","Russia","Saudi Arabia","Singapore","South Korea","Sri Lanka","Syria","Taiwan","Tajikistan",
+                              "Thailand","Timor-Leste","Turkey","Turkmenistan","United Arab Emirates","Uzbekistan","Vietnam","Yemen"],
+                           "Australia and Oceania":["Australia","Fiji","Kiribati","Marshall Islands","Micronesia","Nauru","New Zealand","Palau",
+                              "Papua New Guinea","Samoa","Solomon","Tonga","Tuvalu","Vanuatu"],
+                           "Europe":["Albania","Andorra","Armenia","Austria","Azerbaijan","Belarus","Belgium","Bosnia and Herzegovina",
+                              "Bulgaria","Croatia","Cyprus","Czechia","Denmark","Estonia","Finland","France","Georgia","Germany","Greece","Hungary",
+                              "Iceland","Ireland","Italy","Kazakhstan","Kosovo","Latvia","Liechtenstein","Lithuania","Luxembourg","Malta","Moldova",
+                              "Monaco","Montenegro","Netherlands","North Macedonia","Norway","Poland","Portugal","Romania","Russia","San Marino",
+                              "Serbia","Slovakia","Slovenia","Spain","Sweden","Switzerland","Turkey","Ukraine","United Kingdom",
+                              "Vatican City"],
+                           "North America":["Antigua and Barbuda","Bahamas","Barbados","Belize","Canada","Costa Rica","Cuba","Dominica",
+                              "Dominican Republic","El Salvador","Grenada","Guatemala","Haiti","Honduras","Jamaica","Mexico","Nicaragua","Panama",
+                              "Saint Kitts and Nevis","Saint Vincent and the Grenadines","Trinidad and Tobago","United States"],
+                           "South America":["Argentina","Bolivia","Brazil","Chile","Colombia","Ecuador","Guyana","Paraguay","Peru","Suriname",
+                              "Uruguay","Venezuala"]
+        };
+        
+
 
         function updateCountry(country) {
             console.log(country);
-            var name = "Australia";
-            var continent = "Australia and Oceania";
-            var population = "23232323";
-
-            document.getElementById("cInfo").innerHTML = "<ul>" + 
-                "<li><h3>Name: " + name + "</h3></li>" +
-                "<li>Continent: " + continent + "</li>" +
-                "<li>Population: " + population + "</li>" +
-                "</ul>";
+           // var country = "";
+           // var continent = "";
+            
+           
+            
             
            // var url = https://cors-anywhere.herokuapp.com/https://wiki-text-scraper.herokuapp.com/wiki/" + country + "/infobox";
 
@@ -268,45 +397,105 @@
 
           
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
+            xmlhttp.onreadystatechange = function (population) {
                 if(this.readyState == 4 && this.status == 200) {
                 //xmlhttp.onload = function () {
                 //if (this.status == 200) {
                     console.log("Check this...\n")
                     console.log(this.status);
-                    //console.log(this.responseText);
+                    console.log(this.responseText);
                     console.log("OVER\n\n");
+                    /*
                     var myObj = JSON.parse(this.responseText);
                     //console.log(myObj);
-                    console.log(myObj["Geology"]);
+                    console.log(myObj["Population"]);
+                    //population = myObj["Population"]
+                    console.log(myObj["Coordinates"]);
+                    console.log(myObj["Government"]);
+                    console.log(myObj["Global Peace Index"]);
+                    console.log(myObj["Life Expectancy at birth"]);
+                    console.log(myObj["Life Expectancy at 60"]);
+                    console.log(myObj["Natural Disaster Risk"]);
+                    */
+                    
 
-                    bitcoinData = [];
-                    //bitcoinData[0] = myObj;
-                    //console.log(Objects.keys(myObj)[0]);
                 
                 }
             }; 
-
-            //xmlhttp.open("GET", "https://192.168.0.133:5000/wiki/" + country + "/infobox", true);
-            xmlhttp.open("GET", "https://wiki-text-scraper.herokuapp.com/wiki/" + country, true);
+            console.log("Pop: " + population)
+           
+            
+            function reqListener() {
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("cInfo").innerHTML = "<ul>" + 
+                "<li><h3>" + country + "</h3></li>" +
+                "<li>Continent: " + continent + "</li>" +
+                "<li>Population: " + myObj["Population"] + "</li>" +
+                "<li>Coordinates: " + myObj["Coordinates"] + "</li>" +
+                "<li>Government: " + myObj["Government"] + "</li>" +
+                "<li>Global Peace Index: " + myObj["Global Peace Index"] + "</li>" +
+                "<li>Life Expectancy at birth: " + myObj["Life Expectancy at birth"] + "</li>" +
+                "<li>Life Expectancy at 60: " + myObj["Life Expectancy at 60"] + "</li>" +
+                "<li>Natural Disaster Risk: " + myObj["Natural Disaster Risk"] + "</li>" +
+                "</ul>";
+                //document.getElementById("cInfo").innerHTML = myObj["Population"];
+                //console.log(this.responseText);
+            }
+            xmlhttp.addEventListener("load", reqListener);
+            //xmlhttp.open("GET", "http://192.168.0.192:3600/cLookup/" + country, true);
+            xmlhttp.open("GET", "http://10.200.37.7:3600/cLookup/" + country, true);
+            //xmlhttp.open("GET", "https://wiki-text-scraper.herokuapp.com/wiki/" + country, true);
             
             // xmlhttp.open("GET", "https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20200101&end=20200630", true);
             xmlhttp.send();
+
+            //return population;
           
         }
+
+        function searchBar() {
+            var countrySearch = document.getElementById("sBar").value;
+            //console.log(countrySearch);
+            Object.keys(continents).forEach(function(key) {
+                //console.log(continents[key])
+                for(let i=0; i<continents[key].length; i++){
+                    //console.log(continents[key][i]);
+                    if (countrySearch == continents[key][i]) {
+                        console.log("Continent " + key);
+                        continent = key;
+                    }
+                }
+            })
+            updateCountry(countrySearch);
+        }
    
-
+        //population = updateCountry("Bulgaria");
+        //console.log(population);
+        
         window.onload = function () {
-            updateCountry("Yosemite") // Default to TX 
+            document.getElementById("cInfo").innerHTML = "<ul>" + 
+                "<li><h3>Country Name</h3></li>" +
+                "<li>Continent:</li>" +
+                "<li>Population:</li>" +
+                "<li>Coordinates:</li>" +
+                "<li>Government:</li>" +
+                "<li>Global Peace Index:</li>" +
+                "<li>Life Expectancy at birth:</li>" +
+                "<li>Life Expectancy at 60:</li>" +
+                "<li>Natural Disaster Risk:</li>" +
+                "</ul>";
+            //updateCountry("Bulgaria") // Default to Bulgaria
         };
-
+        
     
         $(".countryTag").click(function(){
             var country=$(this).data("value");
+            continent = $(this).attr("aria-label");
+            console.log(continent);
             updateCountry(country);
         });
 
-
+        
     </script>
 </body>
 </html>

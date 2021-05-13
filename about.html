@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- use the minified versions of bootstrap even if you download it and run it from server -->
+    <!--link rel="stylesheet" href="style.css"-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <title>About</title>
+</head>
+<body>
+      <!-- citation: Bootstrap navbar boilerplate from example on https://getbootstrap.com/docs/5.0/components/navbar/-->
+     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <!-- add navbar-brand AFTER doing list and doing colors above. This is the brand and sep from list-->
+        <!-- this button should be added when showing the Toggler hamburger collapsable menu -->
+        <!-- originally the anchor tag was right above the ul tag -->
+        <!-- putting it here allows the brand to be on left and menu to be on right -->
+        <a class="navbar-brand" href="">Country Lookup</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item"> <!-- add active to class to make it the active link -->
+        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cLook.html">Country Lookup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="QoL.html">Quality of Life</a>
+      </li>
+    </ul>
+  </div>
+  </nav><br><br>
+  <div class="container text-center">
+    
+    <h1>About</h1>
+    <div class="container text-center" style="width:70%;">
+    <p>
+      Safe Country is an app that helps tourists and potential home-buyers make sound decisions about the countries to visit or live in.  
+      The Country Lookup page allows users to see important statistics about any country they choose.  
+    </p>
+    <p>
+      It displays the following statistics for a given country:
+    </p>
+    </div>
+    <ul style="display:inline-block; text-align:left;">
+    <li>Continent</li>
+    <li>Population</li>
+    <li>Geographic Coordinates</li>
+    <li>Type of Government</li>
+    <li>Global Peace Index</li>
+    <li>Healthy Life Expectancy at Birth</li>
+    <li>Healthy Life Expectancy at 60</li>
+    <li>Natural Disaster Risk Ranking</li>
+    </ul>
+    <br><br>
+    <div class="container text-center" style="width:70%;">
+    <p>
+      The Quality of Life (QoL) page allows a user to compare up to five countries and rank them from BEST to WORST according to their quality of life.
+      To determine the quality of life of a country, six criteria are chosen.  The criteria are summed to arrive at an overall score for a country.
+      The country with the lowest sum is the BEST and the country with the highest sum is the WORST. 
+      The six criteria are:
+    </p>
+    </div>
+    <ul style="display:inline-block; text-align:left;">
+    <li>Population Density</li>
+    <li>Global Peace Index Ranking</li>
+    <li>Government Transparency Ranking</li>
+    <li>Healthy Life Expectancy at Birth</li>
+    <li>Healthy Life Expectancy at 60</li>
+    <li>Natural Disaster Risk Ranking</li>
+    </ul>
+    <br>
+    <p>All information is gathered from Wikipedia.</p>
+  </div>
+  
+    
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- use the minified versions of bootstrap even if you download it and run it from server -->
+    <!--link rel="stylesheet" href="style.css"-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <title>Home</title>
+</head>
+<body>
+     <!-- citation: Bootstrap navbar boilerplate from example on https://getbootstrap.com/docs/5.0/components/navbar/-->
+     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <!-- add navbar-brand AFTER doing list and doing colors above. This is the brand and sep from list-->
+        <!-- this button should be added when showing the Toggler hamburger collapsable menu -->
+        <!-- originally the anchor tag was right above the ul tag -->
+        <!-- putting it here allows the brand to be on left and menu to be on right -->
+        <a class="navbar-brand" href="">Country Lookup</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item"> <!-- add active to class to make it the active link -->
+        <a class="nav-link" href="cLook.html">Country Lookup<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="QoL.html">Quality of Life</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+    </ul>
+  </div>
+
+   <!-- this class allows for collapsable navbar.  Also need an id so it knows which part to collapse -->
+        <!-- show how where you place the div is really important.  This needs to be moved after the brand anchor tag -->
+        
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <!-- anchor tag was originally here. It won't show up when collapsed-->
+            <ul class="navbar-nav  ml-auto">
+               
+                <li class="nav-item dropdown">
+                    <!--a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      select language
+                    </a-->
+                    
+                    <!--div class="dropdown-menu" aria-labelledby="Africa">
+                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Algeria">Algeria</a>
+                    </div-->
+
+                    <div id="google_translate_element"></div>
+                </li>
+            </ul>
+        </div>
+  </nav>
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- Image of Alouette Lake Dock taken from maplogs.com. Permission to use from Creative Commons License -->
+    <img style="width:100%; height:350px;" src="https://farm8.staticflickr.com/7453/9399506064_168cbfa8dc_o.jpg">
+    
+    <!--img style="width:100%; height:200px;" src="https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/gpfe1ayxa1vkv9e0d9oz.jpg"-->
+    <div class="container text-center">
+      
+      <h1>Safe Country</h1>
+      
+    </div>
+
+    
+</body>
+</html>
