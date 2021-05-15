@@ -19,7 +19,7 @@ CORS(app, support_credentials=True)
 @app.route('/wiki/<title>/infobox')
 def wikibox(title):
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     text = ''
     items = []
     regex = re.compile('infobox.*')
@@ -71,7 +71,7 @@ def wikiparas(title):
     count = 0
     nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     divs = soup.find('div', class_="mw-parser-output")
     divs = str(divs)
 
@@ -120,7 +120,7 @@ def wikisection(title, section):
     count = 0
     #nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     section = section.lower()
     print(section)
     if section == "intro":
@@ -182,7 +182,7 @@ def wikitables(title):
     tableDict = {}
 
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
 
      # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
     # Comment from user Zroq on May 15, 2017 on how to get next elements
@@ -233,7 +233,7 @@ def wikitablesNoH(title):
     tableDict = {}
 
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
 
     tableRows = []
     table = soup.find('table')               
@@ -272,7 +272,7 @@ def wikitablesh2(title):
     tableDict = {}
 
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
      # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
     # Comment from user Zroq on May 15, 2017 on how to get next elements
     for header in soup.find_all('h2'):
