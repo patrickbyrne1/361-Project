@@ -51,11 +51,16 @@ def coords(title):
         return make_response(jsonify(Error="No coordinates found."), 404)
     latitude = unicodedata.normalize('NFC', latitude)
     longitude = unicodedata.normalize('NFC', longitude)
+    lat = convertCoords(latitude)
+    lon = convertCoords(longitude)
     coord_object = {
         "latitude":latitude,
-        "longitude":longitude
+        "longitude":longitude,
+        "lat": lat,
+        "lon": lon
     }
     return make_response(jsonify(coord_object), 200)
+    
 
 # API for Quality of Life
 # citation:https://stackoverflow.com/questions/18602276/flask-urls-w-variable-parameters; User: Sean Vieira
@@ -178,7 +183,6 @@ def QoL(countries=None):
     Countries are in the countries list already so make new list to place countries in
     based on score.  The lower the score, the earlier you are placed in list so it will
     already be sorted.
-
     """
     QoLList = []
     print(countries)
@@ -566,5 +570,3 @@ def wikitablesh2(title):
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=3600)
-
-
