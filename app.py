@@ -14,6 +14,29 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)
 
 
+# helper functions
+# lat and lon are text string
+def convertCoords(aCoord):
+    coordsList = re.findall(r'\d+', aCoord)
+    print(coordsList)
+    #lonCoordsList = re.findall(r'\d+', aCoord)
+    degCoord = coordsList[0]
+    degCoord = float(degCoord)
+    if len(coordsList) >= 2:
+        minute = format(int(coordsList[1])/60, '.3f')
+        degCoord += float(minute)
+    if len(coordsList) >= 3:
+        second = format(int(coordsList[2])/3600, '.5f')
+        degCoord += float(second)
+    # look at last character to determine N, S, E, or W
+    direction = aCoord[len(aCoord) - 1]    
+    print(type(degCoord))
+    if direction.lower() == 's' or direction.lower() == 'w':
+        degCoord *= -1
+        print("Degree coords", degCoord)
+    # convert back to string and return
+    return str(format(degCoord, '.4f'))
+
 
 # Get Infobox Data
 @app.route('/wiki/<title>/infobox')
