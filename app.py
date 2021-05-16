@@ -84,8 +84,6 @@ def coords(title):
     }
     return make_response(jsonify(coord_object), 200)
     
-
-
 # Get Paragraphs for a Title
 @app.route('/wiki/<title>')
 def wikiparas(title):
@@ -94,21 +92,36 @@ def wikiparas(title):
     count = 0
     nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'html.parser')
-    divs = soup.find('div', class_="mw-parser-output")
-    divs = str(divs)
-
-    pastTable = False
+    soup = BeautifulSoup(site.content, 'lxml')
+    done = False
+    introText = ""
+    # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
+    # Based on the example shown from user Zroq on May 15, 2017 on how to get next elements
+    for divs in soup.find('div', class_="mw-parser-output"):
+        if isinstance(divs, Tag):
+            print("It's a div!")
+            if divs.get('id') == 'toc':
+                print("FUDGE THESE TITS")
+                done = True
+                break
+            #divs = soup.find('div', class_="mw-parser-output")
+            nextElement = divs
+            while True:
+                if nextElement.nextSibling != None:
+                    nextElement = nextElement.nextSibling
+                else:
+                    break
+                if isinstance(nextElement, Tag):
+                    if nextElement.name == "h2":
+                        done = True
+                        break
+                    if nextElement.name == 'p':
+                        print(nextElement)
+                        introText += nextElement.text
+                        introText = introText.strip()       
+        if done:
+            break
     
-    startIndex = divs.find('</table>\n<p>') + 8
-    endIndex = divs.find(r'<div aria-')
-    newText = divs[startIndex:endIndex]
-    regex = re.compile('[.\d*.]')
-    soup2 = BeautifulSoup(newText, 'html.parser')
-    introText = soup2.text
-    introText = introText.strip()
-    #introText = introText.replace(regex.pattern, '')
-
     sections.update({"Intro":introText})
 
     # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
@@ -135,7 +148,7 @@ def wikiparas(title):
                 count += 1
     return sections
 
-# Get Paragraphs for a Title
+# Get Paragraphs from a specific section of a Title
 @app.route('/wiki/<title>/<section>')
 def wikisection(title, section):
     headerText = ""
@@ -143,25 +156,43 @@ def wikisection(title, section):
     count = 0
     #nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'html.parser')
+    soup = BeautifulSoup(site.content, 'lxml')
     section = section.lower()
     print(section)
-    if section == "intro":
-        divs = soup.find('div', class_="mw-parser-output")
-        divs = str(divs)
-
-        pastTable = False
-        
-        
-        startIndex = divs.find('</table>\n<p>') + 8
-        endIndex = divs.find(r'<div aria-')
-        newText = divs[startIndex:endIndex]
-        regex = re.compile('[.\d*.]')
-        soup2 = BeautifulSoup(newText, 'html.parser')
-        introText = soup2.text
-        introText = introText.strip()
-        #introText = introText.replace(regex.pattern, '')
-
+    introText = ""
+    done = False
+     # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
+    # Based on the example shown from user Zroq on May 15, 2017 on how to get next elements
+    if section.lower() == "intro":
+        print("In if")
+        done = False
+        for divs in soup.find('div', class_="mw-parser-output"):
+            if isinstance(divs, Tag):
+                print("It's a div!")
+                if divs.get('id') == 'toc':
+                    print("FUDGE THESE TITS")
+                    done = True
+                    break
+                #divs = soup.find('div', class_="mw-parser-output")
+                nextElement = divs
+                while True:
+                    if nextElement.nextSibling != None:
+                        nextElement = nextElement.nextSibling
+                    else:
+                        break
+                    if isinstance(nextElement, Tag):
+                        if nextElement.name == "h2":
+                            done = True
+                            break
+                        if nextElement.name == 'p':
+                            print(nextElement)
+                            introText += nextElement.text
+                            introText = introText.strip()
+                        #for paras in divs.find_all('p', recursive=False):
+                        #    introText += paras.text
+                        #    introText = introText.strip()
+            if done:
+                break
         sections.update({"Intro":introText})
     else:
         print("In else")
@@ -197,6 +228,8 @@ def wikisection(title, section):
         count += 1
                
     return sections
+
+
 
 
 # Get all in-page tables for a title
@@ -250,6 +283,7 @@ def wikitables(title):
                     tableDict.update({header.text:tableRows})
                     break
     return tableDict
+
 # Get all in-page tables for a title
 @app.route('/wiki/<title>/tablesNoH')
 def wikitablesNoH(title):
