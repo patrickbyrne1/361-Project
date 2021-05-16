@@ -165,9 +165,7 @@ def wikisection(title, section):
     afterInfobox = False
     # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
     # Based on the example shown from user Zroq on May 15, 2017 on how to get next elements
-    if section.lower() == "intro":
-        print("In if")
-        done = False
+    if section.lower() == "intro":        
         for divs in soup.find('div', class_="mw-parser-output"):
             if isinstance(divs, Tag):
                 if divs.get('id') == 'toc':
@@ -192,21 +190,17 @@ def wikisection(title, section):
                             introText = introText.strip()
             if done:
                 break
+        
         sections.update({"Intro":introText})
     else:
-        print("In else")
-        done = False
-        for header in soup.find_all('h2'):
-            
+        for header in soup.find_all('h2'):   
             paras = ""
             hName = header.text.lower()
-            print(hName)
-            print("Section: ", section)
-            if hName == section:
-                if header.text.find("edit") != -1:
-                        end = header.text.find('[')
-                        hName = header.text[:end]
-                
+            if header.text.find("edit") != -1:
+                    end = header.text.find('[')
+                    hName = header.text[:end]
+                    print("New name: " , hName)
+            if hName.lower() == section:
                 nextElement = header
                 while True:
                     nextElement = nextElement.nextSibling
@@ -215,15 +209,15 @@ def wikisection(title, section):
                     if isinstance(nextElement, Tag):
                         if nextElement.name == 'h2':
                             done = True
-                            print("Next element: ", nextElement.name)
                             break
-                        paras +=nextElement.get_text(strip=True).strip()
+                        if nextElement.name == 'p':
+                            paras +=nextElement.text #get_text(strip=True).strip()
+                            paras = paras.strip()
             if done:
                 break    
         sections.update({header.text:paras})
-        count += 1
-               
     return sections
+
 
 
 
