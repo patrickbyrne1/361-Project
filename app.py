@@ -193,13 +193,13 @@ def wikisection(title, section):
         
         sections.update({"Intro":introText})
     else:
+        hName = ""
         for header in soup.find_all('h2'):   
             paras = ""
-            hName = header.text.lower()
+            hName = header.text
             if header.text.find("edit") != -1:
                     end = header.text.find('[')
                     hName = header.text[:end]
-                    print("New name: " , hName)
             if hName.lower() == section:
                 nextElement = header
                 while True:
@@ -215,7 +215,7 @@ def wikisection(title, section):
                             paras = paras.strip()
             if done:
                 break    
-        sections.update({header.text:paras})
+        sections.update({hName:paras})
     return sections
 
 
