@@ -92,7 +92,7 @@ def wikiparas(title):
     count = 0
     nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     done = False
     introText = ""
     # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
@@ -156,7 +156,7 @@ def wikisection(title, section):
     count = 0
     #nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
-    soup = BeautifulSoup(site.content, 'lxml')
+    soup = BeautifulSoup(site.content, 'html.parser')
     section = section.lower()
     print(section)
     introText = ""
