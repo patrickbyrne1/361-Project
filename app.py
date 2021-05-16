@@ -90,21 +90,20 @@ def wikiparas(title):
     headerText = ""
     sections = {}
     count = 0
-    nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
+    nonAllowed = ["Bibliography", "Further reading", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
     soup = BeautifulSoup(site.content, 'html.parser')
-    done = False
+    
     introText = ""
+    done = False
+    afterInfobox = False
     # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
     # Based on the example shown from user Zroq on May 15, 2017 on how to get next elements
     for divs in soup.find('div', class_="mw-parser-output"):
         if isinstance(divs, Tag):
-            print("It's a div!")
             if divs.get('id') == 'toc':
-                print("FUDGE THESE TITS")
                 done = True
                 break
-            #divs = soup.find('div', class_="mw-parser-output")
             nextElement = divs
             while True:
                 if nextElement.nextSibling != None:
@@ -112,10 +111,12 @@ def wikiparas(title):
                 else:
                     break
                 if isinstance(nextElement, Tag):
-                    if nextElement.name == "h2":
+                    if nextElement.name == "table":
+                        afterInfobox = True
+                    if nextElement.name == 'h2':
                         done = True
                         break
-                    if nextElement.name == 'p':
+                    if nextElement.name == 'p' and afterInfobox:
                         print(nextElement)
                         introText += nextElement.text
                         introText = introText.strip()       
@@ -154,23 +155,22 @@ def wikisection(title, section):
     headerText = ""
     sections = {}
     count = 0
-    #nonAllowed = ["Bibliography", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
     soup = BeautifulSoup(site.content, 'html.parser')
     section = section.lower()
     print(section)
+    
     introText = ""
     done = False
-     # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
+    afterInfobox = False
+    # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
     # Based on the example shown from user Zroq on May 15, 2017 on how to get next elements
     if section.lower() == "intro":
         print("In if")
         done = False
         for divs in soup.find('div', class_="mw-parser-output"):
             if isinstance(divs, Tag):
-                print("It's a div!")
                 if divs.get('id') == 'toc':
-                    print("FUDGE THESE TITS")
                     done = True
                     break
                 #divs = soup.find('div', class_="mw-parser-output")
@@ -181,16 +181,15 @@ def wikisection(title, section):
                     else:
                         break
                     if isinstance(nextElement, Tag):
+                        if nextElement.name == "table":
+                            afterInfobox = True
                         if nextElement.name == "h2":
                             done = True
                             break
-                        if nextElement.name == 'p':
+                        if nextElement.name == 'p' and afterInfobox:
                             print(nextElement)
                             introText += nextElement.text
                             introText = introText.strip()
-                        #for paras in divs.find_all('p', recursive=False):
-                        #    introText += paras.text
-                        #    introText = introText.strip()
             if done:
                 break
         sections.update({"Intro":introText})
@@ -213,9 +212,6 @@ def wikisection(title, section):
                     nextElement = nextElement.nextSibling
                     if nextElement is None:
                          break
-                    #if isinstance(nextElement, NavigableString):
-                        
-                    #     paras += nextElement.strip()
                     if isinstance(nextElement, Tag):
                         if nextElement.name == 'h2':
                             done = True
