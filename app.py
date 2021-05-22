@@ -1,4 +1,4 @@
-# import the Flask class from the flask module
+#import the Flask class from the flask module
 from typing import Text
 from flask import Flask, render_template, redirect, url_for, request, session, flash, jsonify, make_response
 import datetime, random, json
@@ -20,7 +20,6 @@ CORS(app, support_credentials=True)
 # lat and lon are text string
 def convertCoords(aCoord):
     coordsList = re.findall(r'\d+', aCoord)
-    print(coordsList)
     #lonCoordsList = re.findall(r'\d+', aCoord)
     degCoord = coordsList[0]
     degCoord = float(degCoord)
@@ -35,7 +34,6 @@ def convertCoords(aCoord):
     print(type(degCoord))
     if direction.lower() == 's' or direction.lower() == 'w':
         degCoord *= -1
-        print("Degree coords", degCoord)
     # convert back to string and return
     return str(format(degCoord, '.4f'))
 
@@ -43,9 +41,7 @@ def convertCoords(aCoord):
 def intro(soup):
     afterInfobox = False
     introText = ""
-    #regex = re.compile('infobox.*')
-    print(soup.find('table', class_="infobox"))
-    
+    newText = ""
     for divs in soup.find('div', class_="mw-parser-output"):
         if isinstance(divs, Tag):
             if divs.get('id') == 'toc':
@@ -62,18 +58,22 @@ def intro(soup):
                     # citation: https://stackoverflow.com/questions/21592012/extract-class-name-from-tag-beautifulsoup-python/21592363
                     # used ideas on this page to find an element by its class
                     # element attributes contained in dictionary form
-                    if nextElement.name == "table" and nextElement.has_attr('class'): #and nextElement.class ==::     
-                        print(nextElement["class"][0])      
+                    if nextElement.name == "table" and nextElement.has_attr('class'): #and nextElement.class ==::        
                         afterInfobox = True
                     if nextElement.name == "h2":
                         done = True
                         break
-                    if nextElement.name == 'p' and (afterInfobox or soup.find('table', class_="infobox") == None):
+                    if nextElement.name == "div" and nextElement["class"][0] == "toc":
+                        done = True
+                        break
+                    if nextElement.name == 'p': # and afterInfobox : #or soup.find('table', class_="infobox") == None):
                         introText += nextElement.text
-                        introText = introText.strip()
+                        #introText = introText.strip()
         if done:
             break
-    return introText
+    #citation:  http://www.digitalmarketingchef.org/replace-regex-in-python-string/
+    newText = re.sub('''\[\w+\]''', '', introText)
+    return newText
 
 
 
@@ -86,6 +86,7 @@ def wikiparas(title):
     nonAllowed = ["Bibliography", "Further reading", "General references", "Citations", "Contents", "Navigation menu", "Notes", "References", "See also", "External links"]
     site = requests.get('https://en.wikipedia.org/wiki/' + title)
     soup = BeautifulSoup(site.content, 'html.parser')
+
     if soup.find('div', class_="mw-parser-output") == None:
         return make_response(jsonify(Error="No page exists with that title."), 404)
 
@@ -116,8 +117,10 @@ def wikiparas(title):
                 if isinstance(nextElement, Tag):
                     if nextElement.name == 'h2':
                         break
-                    paras +=nextElement.get_text(strip=True).strip()
-                sections.update({hName:paras})
+                    paras +=nextElement.text #get_text(strip=True).strip()
+                #citation: THANK YOU! https://digitalmarketingchef.orghttp://www.digitalmarketingchef.org/replace-regex-in-python-string
+                newParas = re.sub('''\[\w+\]''', '', paras)
+                sections.update({hName:newParas})
                 count += 1
     return make_response(jsonify(sections), 200)
     
@@ -135,7 +138,8 @@ def wikisection(title, section):
         return make_response(jsonify(Error="No page exists with that title."), 404)
     section = section.lower()
     done = False
-     # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
+    #pattern = '[' +  ^[A-Za-z0-9]*$ + "]"
+    # citation: https://stackoverflow.com/questions/42820342/get-text-in-between-two-h2-headers-using-beautifulsoup
     # Based on the example shown from user Zroq on May 15, 2017 on how to get next elements
     if section == "intro":     
         introText = intro(soup)
@@ -148,13 +152,11 @@ def wikisection(title, section):
         hName = ""
         for header in soup.find_all('h2'):   
             paras = ""
+            newParas = ""
             hName = header.text
-            print("hName: ", hName)
-            print("section: ", section)
             if header.text.find("edit") != -1:
                     end = header.text.find('[')
                     hName = header.text[:end]
-                    print("New name: " , hName)
             if hName.lower() == section:
                 isFound = True
                 nextElement = header
@@ -167,15 +169,14 @@ def wikisection(title, section):
                             done = True
                             break
                         if nextElement.name == 'p':
-                            paras +=nextElement.text #get_text(strip=True).strip()
-                            paras = paras.strip()
-            #else:
-            #    return make_response(jsonify(Error="No section exists on this page."), 404)
+                            paras += nextElement.text #get_text(strip=True).strip()
             if done:
                 break    
         if not isFound:
             return make_response(jsonify(Error="No section with that name exists on this page."), 400)
-        sections.update({hName:paras})
+        #citation: THANK YOU!!!  http://www.digitalmarketingchef.org/replace-regex-in-python-string/
+        newParas = re.sub('''\[\w+\]''', "", paras)
+        sections.update({hName:newParas})
     return make_response(jsonify(sections), 200)
 
 
@@ -421,7 +422,8 @@ def wikitablesh2(title):
 
 
 
-#if __name__ == "__main__":
-#    app.run(debug=True, host="0.0.0.0", port=4500)
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=4500)
+
 
 
