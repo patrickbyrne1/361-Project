@@ -18,6 +18,31 @@
      
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <title>Country Lookup</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+ 
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+     crossorigin=""></script>
+
+    <style>
+        #mymap { 
+            height: 360px; 
+            width: 100%;
+        }
+       
+        .dropdown-container {
+            position:relative;
+        }
+
+        #sDrop {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
     
 </head>
 <body>
@@ -33,19 +58,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item"> <!-- add active to class to make it the active link -->
-        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="QoL.html">Quality of Life</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About</a>
-      </li>
-    </ul>
-  </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item"> <!-- add active to class to make it the active link -->
+                <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="QoL.html">Quality of Life</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            </ul>
+        </div>
 
         <!-- this class allows for collapsable navbar.  Also need an id so it knows which part to collapse -->
         <!-- show how where you place the div is really important.  This needs to be moved after the brand anchor tag -->
@@ -53,7 +78,6 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <!-- anchor tag was originally here. It won't show up when collapsed-->
             <ul class="navbar-nav  ml-auto">
-               
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Africa
@@ -316,23 +340,40 @@
             </ul>
         </div>
     </nav>
-    <input type="text" placeholder="Search..." id="sBar">
-    <button onclick="searchBar()">GO</button>
-    <br><br><div class="text-center">
+    <div id="sDrop">
+        <div>
+            <a href="#" data-toggle="tooltip" title="Search directly for a specific country.">
+            <input type="text" placeholder="Search..." id="sBar">
+            </a>
+            <button onclick="searchBar()">GO</button>
+         
+        </div>
+        <div class="dropdown" style="margin-right:40px;">
+            <a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown">Select Language</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
+                <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
+                <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+                <a class="dropdown-item lang" href="#" aria-label="Language" data-value="de">German</a>
+            </div>
+        </div>
+    </div>
+    <div id="t1">
+    <br><br><div class="text-center" >
         <h5>Please choose a country from the drop-down menus or by entering it in the search bar.  The country's information will be displayed below.</h5>
         </div><br>
-    <div class="container-fluid text-center">
-        <div class="border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
+    <div class="notranslate container-fluid text-center">
+        <div class="notranslate border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
         
-            <div class="col-auto col-lg text-left" id="cInfo">
+            <div class="notranslate col-auto col-lg text-left" id="cInfo">
                 
             </div>
         </div>
         <br>
-        <div class="border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
-            <div class="content mt-5 text-align" id="cMap">
+        <div class="notranslate border border-secondary container-fluid text-center" style="margin: 0 auto; width:60%">
+            <div class="content mt-5 text-align" id="mymap">
                 
-                <iframe width="75%"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500743.6312020535!2d24.422357456064066!3d42.7219294628576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a8fec1c85bf089%3A0xa01269bf4c10!2sBulgaria!5e0!3m2!1sen!2sus!4v1620788661863!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <!-- iframe width="75%"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500743.6312020535!2d24.422357456064066!3d42.7219294628576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a8fec1c85bf089%3A0xa01269bf4c10!2sBulgaria!5e0!3m2!1sen!2sus!4v1620788661863!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe -->
 
                 
             </div>
@@ -343,10 +384,19 @@
         </div>    
     
     </div>
+    </div>  
     <!-- is this dropdown-toggle needed? -->
     <script>
         $(document).ready(function () {
             $('.dropdown-toggle').dropdown();
+        });
+    </script>
+    
+    <script>
+        // citation: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_tooltip&stacked=h
+        // Shows how to make a tooltip.  The JQuery below is from this w3schools page.
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
         });
     </script>
     <script>
@@ -385,9 +435,14 @@
             console.log(country);
            // var country = "";
            // var continent = "";
-            
            
-            
+
+            var container = L.DomUtil.get('mymap');
+            if(container != null){
+                container._leaflet_id = null;
+            }
+           
+           getMap(country);
             
            // var url = https://cors-anywhere.herokuapp.com/https://wiki-text-scraper.herokuapp.com/wiki/" + country + "/infobox";
 
@@ -428,7 +483,7 @@
             function reqListener() {
                 var myObj = JSON.parse(this.responseText);
                 document.getElementById("cInfo").innerHTML = "<ul>" + 
-                "<li><h3>" + country + "</h3></li>" +
+                "< li><h3>" + country + "</h3></li>" +
                 "<li>Continent: " + continent + "</li>" +
                 "<li>Population: " + myObj["Population"] + "</li>" +
                 "<li>Coordinates: " + myObj["Coordinates"] + "</li>" +
@@ -443,7 +498,7 @@
             }
             xmlhttp.addEventListener("load", reqListener);
             //xmlhttp.open("GET", "http://192.168.0.192:3600/cLookup/" + country, true);
-            xmlhttp.open("GET", "http://10.200.37.7:3600/cLookup/" + country, true);
+            xmlhttp.open("GET", "http://192.168.0.192:7200/cLookup/" + country, true);
             //xmlhttp.open("GET", "https://wiki-text-scraper.herokuapp.com/wiki/" + country, true);
             
             // xmlhttp.open("GET", "https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20200101&end=20200630", true);
@@ -456,6 +511,7 @@
         function searchBar() {
             var countrySearch = document.getElementById("sBar").value;
             //console.log(countrySearch);
+            var isValid = false;
             Object.keys(continents).forEach(function(key) {
                 //console.log(continents[key])
                 for(let i=0; i<continents[key].length; i++){
@@ -463,12 +519,117 @@
                     if (countrySearch == continents[key][i]) {
                         console.log("Continent " + key);
                         continent = key;
+                        isValid = true;
+                        console.log(isValid);
+                        break;
                     }
                 }
-            })
-            updateCountry(countrySearch);
+            });
+            if(isValid == false) {
+                alert("Invalid country.");
+            }
+            else {
+                updateCountry(countrySearch);
+            }
         }
    
+        function getMap(cSearch) {   
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200) {
+                    console.log(this.status);
+                    //console.log(this.responseText);
+                    const data = JSON.parse(this.responseText);
+                    console.log(data);
+                    console.log(data["script"]);
+                    //const latitude = data.latitude; //Math.round(data.latitude * 10000) / 10000;
+                    //const longitude = data.longitude; //Math.round(data.longitude * 10000) / 10000;
+                    //marker.setLatLng([latitude, longitude]);
+                    // Can do it this way but it's not as good if you want to update things
+                    //L.marker([latitude, longitude]).addTo(mymap);
+                    // instead, set this before the function and update it in the function
+                    //if(firstTime) {
+                    //    mymap.setView([latitude, longitude], 2);
+                    //    firstTime = false;
+                    //}
+                    
+                    var strScript = data["script"];
+                    var strScript = data["script"].replace('Zoom: 18','Zoom: 4');
+                    //strScript = strScript.replace('tileSize: 512', 'tileSize: 256');
+                    strScript = strScript.replace('atribution', 'attribution');
+                    
+                    eval(strScript);
+                    //document.getElementById("mymap").s
+                    
+                }
+            }; 
+        
+            xmlhttp.open("GET", 'http://192.168.0.192:7200/map/' + cSearch , true);
+            xmlhttp.send();
+        }
+
+        const transUrl = 'https://chrome-octane-313320.uc.r.appspot.com/translations/ns';
+        
+        var data = "";
+        var data2 = "";
+        prevLang = "en";
+        
+        function translateMe(lang) {
+            console.log("In function");
+            console.log(lang);
+            var myHtml = document.getElementById("t1").innerHTML;
+            //var myHtml = document.getElementById("cInfo").innerHTML; // myHtml is always english
+            
+            console.log(myHtml);
+            console.log(typeof myHtml);
+           
+            const myobj = {
+                "text":  myHtml,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "source": prevLang,
+                "target": lang
+            };
+            /*
+            const t1obj = {
+                'text':  t1,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "source": prevLang,
+                "target": lang
+            };
+            */
+            prevLang = lang;
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 201) {
+                    
+                    console.log(this.status);
+                    
+                    
+                    data = JSON.parse(this.responseText);
+                    console.log("Data is: " + typeof data);
+                    console.log(data);
+                    console.log(data['translated']);
+                    console.log(typeof data["translated"]);
+                    var newStr = data["translated"];
+                    newStr = newStr.replaceAll("< ", "<")
+                    document.getElementById('t1').innerHTML = newStr;//data["translated"];
+                    //location.reload();
+                    
+                } else {
+                    console.log(this.readyState);
+                    console.log(this.status);
+                    console.log("Here");
+                }
+            };
+            xmlhttp.open("POST", transUrl, true);
+            xmlhttp.setRequestHeader("Content-Type", "application/json");
+            xmlhttp.send(JSON.stringify(myobj));
+
+           
+
+    
+        }
+        //translateMe();
+
         //population = updateCountry("Bulgaria");
         //console.log(population);
         
@@ -495,6 +656,15 @@
             updateCountry(country);
         });
 
+
+        $(".lang").click(function(){
+            var lang=$(this).data("value");
+            console.log(lang);
+            //continent = $(this).attr("aria-label");
+            //console.log(continent);
+            //updateCountry(country);
+            translateMe(lang);
+        });
         
     </script>
 </body>

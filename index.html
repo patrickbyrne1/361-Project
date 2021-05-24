@@ -8,6 +8,13 @@
     <!-- use the minified versions of bootstrap even if you download it and run it from server -->
     <!--link rel="stylesheet" href="style.css"-->
 
+    <style>
+      h2 {
+        margin:40px;
+      }
+
+    </style>
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
@@ -26,7 +33,7 @@
         <!-- this button should be added when showing the Toggler hamburger collapsable menu -->
         <!-- originally the anchor tag was right above the ul tag -->
         <!-- putting it here allows the brand to be on left and menu to be on right -->
-        <a class="navbar-brand" href="">Country Lookup</a>
+        <a class="navbar-brand" href="">Safe Country</a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,24 +74,105 @@
             </ul>
         </div>
   </nav>
-  <div id="google_translate_element"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-    </script>
-    
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ 
+  <div class="dropdown text-right" style="margin-right:40px;">
+    <a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown">Select Language</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="de">German</a>
+    </div>
+  </div>
     
     <!-- Image of Alouette Lake Dock taken from maplogs.com. Permission to use from Creative Commons License -->
     <img style="width:100%; height:350px;" src="https://farm8.staticflickr.com/7453/9399506064_168cbfa8dc_o.jpg">
     
     <!--img style="width:100%; height:200px;" src="https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/gpfe1ayxa1vkv9e0d9oz.jpg"-->
-    <div class="container text-center">
-      
-      <h1>Safe Country</h1>
+    <div class="container text-left" id="t1" style="width:50%;">
+      <h1>Safe Country</h1><br>
+      <div>
+        
+        <h2>Find countries with the best quality of life.</h2>
+        <h2>Travel safer.</h2>
+        <h2>Buy with confidence.</h2>
+      </div>
       
     </div>
+
+    <script>
+       const transUrl = 'https://chrome-octane-313320.uc.r.appspot.com/translations/ns';
+        
+        var data = "";
+        var data2 = "";
+        prevLang = "en";
+        
+        function translateMe(lang) {
+            console.log("In function");
+            console.log(lang);
+            var myHtml = document.getElementById("t1").innerHTML;
+            //var myHtml = document.getElementById("cInfo").innerHTML; // myHtml is always english
+            
+            console.log(myHtml);
+            console.log(typeof myHtml);
+           
+            const myobj = {
+                "text":  myHtml,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "source": prevLang,
+                "target": lang
+            };
+            /*
+            const t1obj = {
+                'text':  t1,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "source": prevLang,
+                "target": lang
+            };
+            */
+            prevLang = lang;
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 201) {
+                    
+                    console.log(this.status);
+                    
+                    
+                    data = JSON.parse(this.responseText);
+                    console.log("Data is: " + typeof data);
+                    console.log(data);
+                    console.log(data['translated']);
+                    console.log(typeof data["translated"]);
+                    var newStr = data["translated"];
+                    newStr = newStr.replaceAll("< ", "<")
+                    document.getElementById('t1').innerHTML = newStr;//data["translated"];
+                    //location.reload();
+                    
+                } else {
+                    console.log(this.readyState);
+                    console.log(this.status);
+                    console.log("Here");
+                }
+            };
+            xmlhttp.open("POST", transUrl, true);
+            xmlhttp.setRequestHeader("Content-Type", "application/json");
+            xmlhttp.send(JSON.stringify(myobj));
+
+           
+
+    
+        }
+        $(".lang").click(function(){
+            var lang=$(this).data("value");
+            console.log(lang);
+            //continent = $(this).attr("aria-label");
+            //console.log(continent);
+            //updateCountry(country);
+            translateMe(lang);
+        });
+
+    </script>
+
+    
 
     
 </body>

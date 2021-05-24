@@ -45,8 +45,22 @@
       </li>
     </ul>
   </div>
-  </nav><br><br>
-  <div class="container text-center">
+  </nav>
+
+  <div class="dropdown text-right" style="margin-right:40px;">
+    <a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown">Select Language</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="de">German</a>
+    </div>
+  </div>
+  
+  <br><br>
+
+
+  <div class="container text-center" id="t1">
     
     <h1>About</h1>
     <div class="container text-center" style="width:70%;">
@@ -88,7 +102,82 @@
     <br>
     <p>All information is gathered from Wikipedia.</p>
   </div>
-  
+  <script>
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+  <script>
+    
+    const transUrl = 'https://chrome-octane-313320.uc.r.appspot.com/translations/ns';
+        
+        var data = "";
+        var data2 = "";
+        prevLang = "en";
+        
+        function translateMe(lang) {
+            console.log("In function");
+            console.log(lang);
+            var myHtml = document.getElementById("t1").innerHTML;
+            //var myHtml = document.getElementById("cInfo").innerHTML; // myHtml is always english
+            
+            console.log(myHtml);
+            console.log(typeof myHtml);
+           
+            const myobj = {
+                "text":  myHtml,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "source": prevLang,
+                "target": lang
+            };
+            /*
+            const t1obj = {
+                'text':  t1,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "source": prevLang,
+                "target": lang
+            };
+            */
+            prevLang = lang;
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 201) {
+                    
+                    console.log(this.status);
+                    
+                    
+                    data = JSON.parse(this.responseText);
+                    console.log("Data is: " + typeof data);
+                    console.log(data);
+                    console.log(data['translated']);
+                    console.log(typeof data["translated"]);
+                    var newStr = data["translated"];
+                    newStr = newStr.replaceAll("< ", "<")
+                    document.getElementById('t1').innerHTML = newStr;//data["translated"];
+                    //location.reload();
+                    
+                } else {
+                    console.log(this.readyState);
+                    console.log(this.status);
+                    console.log("Here");
+                }
+            };
+            xmlhttp.open("POST", transUrl, true);
+            xmlhttp.setRequestHeader("Content-Type", "application/json");
+            xmlhttp.send(JSON.stringify(myobj));
+
+           
+
+    
+        }
+        $(".lang").click(function(){
+            var lang=$(this).data("value");
+            console.log(lang);
+            //continent = $(this).attr("aria-label");
+            //console.log(continent);
+            //updateCountry(country);
+            translateMe(lang);
+        });
+  </script>
     
 </body>
 </html>
