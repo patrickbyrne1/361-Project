@@ -12,7 +12,15 @@
       h2 {
         margin:40px;
       }
+      .menu-container {
+          display: inline-block;
+          position: relative;
+          margin: 0;
+      }
+      .menu-container a {
+          position: absolute;
 
+      }
     </style>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
@@ -51,42 +59,29 @@
         <a class="nav-link" href="about.html">About</a>
       </li>
     </ul>
-  </div>
-
-   <!-- this class allows for collapsable navbar.  Also need an id so it knows which part to collapse -->
-        <!-- show how where you place the div is really important.  This needs to be moved after the brand anchor tag -->
-        
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <!-- anchor tag was originally here. It won't show up when collapsed-->
-            <ul class="navbar-nav  ml-auto">
-               
-                <li class="nav-item dropdown">
-                    <!--a class="nav-link dropdown-toggle" href="#" id="states" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      select language
-                    </a-->
-                    
-                    <!--div class="dropdown-menu" aria-labelledby="Africa">
-                        <a class="dropdown-item countryTag" href="#" aria-label="Africa" data-value="Algeria">Algeria</a>
-                    </div-->
-
-                    <div id="google_translate_element"></div>
-                </li>
-            </ul>
-        </div>
-  </nav>
- 
-  <div class="dropdown text-right" style="margin-right:40px;">
-    <a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown">Select Language</a>
-    <div class="dropdown-menu">
-        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
-        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
-        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
-        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="de">German</a>
+    <div class="dropdown text-right ml-auto navbar-dark" style="margin-right:40px;">
+      <a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown">Select Language</a>
+      <div class="dropdown-menu">
+          <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
+          <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
+          <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+         
+      </div>
     </div>
   </div>
+
+  
+  </nav>
+ 
+  
+ 
     
+    <div>
+      <img style="width:100%; height:350px;" src="https://farm8.staticflickr.com/7453/9399506064_168cbfa8dc_o.jpg">
+    </div>
+  
     <!-- Image of Alouette Lake Dock taken from maplogs.com. Permission to use from Creative Commons License -->
-    <img style="width:100%; height:350px;" src="https://farm8.staticflickr.com/7453/9399506064_168cbfa8dc_o.jpg">
+    
     
     <!--img style="width:100%; height:200px;" src="https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/gpfe1ayxa1vkv9e0d9oz.jpg"-->
     <div class="container text-left" id="t1" style="width:50%;">
