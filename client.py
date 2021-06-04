@@ -5,15 +5,22 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 import requests
 import re
 import unicodedata
-
+import pymongo
+from pymongo import MongoClient
 
 from flask_cors import CORS, cross_origin
+
+# mongodb setup
+cluster = MongoClient("mongodb+srv://wheatstraw:67!Apollo625@cluster0.s9qh7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+
+db=cluster["countries"]
+collection=db["name"]
 
 # create the application object
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
-ip_addy = "192.168.0.192:4500" #"10.200.37.7:4500"
+ip_addy = "wiki-text-scraper.herokuapp.com" #"10.200.37.7:4500"
 
 """
 @app.route("/<choice>")
@@ -195,6 +202,10 @@ def QoL(countries=None):
 
     return jsonify(sortedQoL)
 
+
+
+
+
 # API for Country Lookup
 # citation:https://www.geeksforgeeks.org/python-program-to-extract-string-till-first-non-alphanumeric-character/
 @app.route("/cLookup/<country>")
@@ -202,7 +213,11 @@ def QoL(countries=None):
 def cLookup(country):
     
     countryStats = {}
+    entry = collection.find_one({"name":country})
+    if entry != None:
+        return entry
     
+
     infobox = requests.get("http://" + ip_addy + "/wiki/" + country + "/infobox")
     coords = requests.get("http://" + ip_addy + "/wiki/" + country + "/coords")
 
@@ -282,6 +297,11 @@ def cLookup(country):
     countryStats.update({"Life Expectancy at birth": leBirth})
     countryStats.update({"Life Expectancy at 60": le60})
     countryStats.update({"Natural Disaster Risk": natDisRisk})
+
+    countryStats.update({"_id":0})
+    countryStats.update({"name":country})
+    # insert into mongodb
+    collection.insert_one(countryStats)
 
     return countryStats
 
