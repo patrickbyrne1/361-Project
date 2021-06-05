@@ -13,8 +13,6 @@
    </style>
 
     <!-- use the minified versions of bootstrap even if you download it and run it from server -->
-    <!--link rel="stylesheet" href="style.css"-->
-
     <script src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
@@ -63,6 +61,8 @@
         <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
         <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
         <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">Chinese</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">Hindi</a>
     </div>
   </div>
   </div>
@@ -446,11 +446,11 @@
         <h1>Africa</h1>
 
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="country" value="Algeria">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="Algeria">
           <label class="form-check-label" for="flexSwitchCheckDefault">Algeria</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="country" value="Angola">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Angola">
           <label class="form-check-label" for="flexSwitchCheckChecked">Angola</label>
         </div>
         <div class="form-check form-switch">
@@ -691,8 +691,8 @@
           <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Cambodia</label>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">China</label name="abc" value="China">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="abc" value="China">
+          <label class="form-check-label" for="flexSwitchCheckDefault">China</label>
         </div>
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="abc" value="Cyprus">
@@ -925,8 +925,9 @@
   <br><br>
   <div class="text-right" style="width:95%">
   <div class="btn-group text-right">
-      <button type="button" class="btn btn-secondary btn-lg" id="select" onclick="cLook()">Submit</button> <br>  
-      <button type="button" class="btn btn-secondary btn-lg" id="select" onclick="clearAll()">Clear All</button> <br>  
+      <button type="button" class="btn btn-info btn-lg" id="select" onclick="top10()">Top 10</button> <br>  
+      <button type="button" class="btn btn-dark btn-lg" id="select" onclick="cLook()">Submit</button> <br>  
+      <button type="button" class="btn btn-danger btn-lg" id="select" onclick="clearAll()">Clear All</button> <br>  
  </div>
  </div>
   <br>
@@ -935,38 +936,39 @@
     var countries = [];
     var isPressed = false;
 
-    
-/*
-    function cLook(){
-      
-      if(!isPressed) {
-        const cb = document.querySelectorAll('input[type="checkbox"]:checked')
-        
-        //console.log("Clicked");
-       // console.log(cb);
-        cb.forEach((checkbox) => {
-            console.log(checkbox.text);
-            countries.push(checkbox.value);
-        });
-        console.log(countries);
-        QoL(countries);
-      }
-      isPressed = true;
-   }
-   */
-  // Citation: https://www.includehelp.com/code-snippets/javascript-print-value-of-all-checked-selected-checkboxes.aspx
-   function cLook(){
-                    var items=document.getElementsByName('abc');
-                    var selectedItems=[];
-                    for(var i=0; i<items.length; i++){
-                        if(items[i].type=='checkbox' && items[i].checked==true)
-                            selectedItems.push(items[i].value); //+=items[i].value+"\n";
-                            console.log(items[i].value);
+
+  // Citation: https://www.includehelp.com/code-snippets/javascript-print-value-of-all-checked-selected-checkboxes.
+  
+  function top10() {
+      var xhp = new XMLHttpRequest();
+      xhp.onreadystatechange = function () {
+          if(this.readyState == 4 && this.status == 200) {
+              console.log(this.status);      
+              var top10Obj = JSON.parse(this.responseText);
+              console.log(top10Obj);
+              var alertStr = "Top 10 Countries\nHere are the best 10 countries in the world\n" +
+                                   " in order from BEST to WORST quality of life:\n";
+              for(let i=0; i<top10Obj.length; i++) {
+                  alertStr += (i+1) + ". " + top10Obj[i] + "\n";                                   
+              }
+              alert(alertStr);
+          }
+      };      
+      xhp.open("GET", "http://192.168.0.192:7200/top10", true);
+      xhp.send();
+  }  
+
+  function cLook(){
+                    var selectedCountry=document.getElementsByName('abc');
+                    var selectedCountries=[];
+                    for(var i=0; i<selectedCountry.length; i++){
+                        if(selectedCountry[i].type=='checkbox' && selectedCountry[i].checked==true)
+                            selectedCountries.push(selectedCountry[i].value); 
+                            console.log(selectedCountry[i].value);
                     }
-                    console.log(selectedItems);
-                    //alert(selectedItems);
-                    QoL(selectedItems);
-                }		
+                    console.log(selectedCountries);
+                    QoL(selectedCountries);
+  }		
   function QoL(countries) {
             console.log("Countries chosen: " + countries);
             if(countries.length < 2 || countries.length > 5) {
@@ -987,12 +989,23 @@
                     console.log(this.status);
                     
                     var myObj = JSON.parse(this.responseText);
+                    var incompleteCountries = [];
                     console.log(myObj);
-                    var alertStr = "Quality of Life Results\nHere are the selected countries in order from BEST to WORST quality of life:\n";
+                    var alertStr = "Quality of Life Results\nHere are the selected countries" +
+                                   " in order from BEST to WORST quality of life:\n";
                     for(let i=0; i<myObj.length; i++) {
-                          alertStr += (i+1) + ". " + myObj[i] + "\n";
+                          if(myObj[i].indexOf("Incomplete") == -1)
+                                alertStr += (i+1) + ". " + myObj[i] + "\n";
+                          else 
+                                incompleteCountries.push(myObj[i]);    
                     }
-                    alertStr += "Of the " + myObj.length + " countries, " + myObj[0] + " has the BEST quality of life and is the clear choice."
+                    alertStr += "Of the " + myObj.length + " countries, " + myObj[0] + 
+                                " has the BEST quality of life and is the clear choice.\n";
+                    for(let i=0; i<incompleteCountries.length; i++) {
+                          if(i == 0)
+                                alertStr += "\nThe following countries were excluded for lack of information:\n";           
+                          alertStr += (i+1) + ". " + incompleteCountries[i].substring(11) + "\n";
+                    }
                     alert(alertStr);
                 
                 }
@@ -1029,7 +1042,6 @@
   const transUrl = 'https://chrome-octane-313320.uc.r.appspot.com/translations/ns';
         
         var data = "";
-        var data2 = "";
         prevLang = "en";
         
         function translateMe(lang) {

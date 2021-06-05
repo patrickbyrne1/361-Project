@@ -50,9 +50,11 @@
   <div class="dropdown text-right" style="margin-right:40px;">
     <a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown">Select Language</a>
     <div class="dropdown-menu">
-        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
-        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
-        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+      <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
+      <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
+      <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+      <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">Chinese</a>
+      <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">Hindi</a>
     </div>
   </div>
   
@@ -125,17 +127,11 @@
             console.log(typeof myHtml);
            
             const myobj = {
-                "text":  myHtml,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "text":  myHtml,
                 "source": prevLang,
                 "target": lang
             };
-            /*
-            const t1obj = {
-                'text':  t1,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
-                "source": prevLang,
-                "target": lang
-            };
-            */
+          
             prevLang = lang;
             var xmlhttp = new XMLHttpRequest();
 

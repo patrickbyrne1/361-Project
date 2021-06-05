@@ -49,7 +49,7 @@
         
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item"> <!-- add active to class to make it the active link -->
+      <li class="nav-item">
         <a class="nav-link" href="cLook.html">Country Lookup<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -62,9 +62,11 @@
     <div class="dropdown text-right ml-auto navbar-dark" style="margin-right:40px;">
       <a href="#" class="dropdown-toggle text-secondary" data-toggle="dropdown">Select Language</a>
       <div class="dropdown-menu">
-          <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
-          <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
-          <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="en">English</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="es">Spanish</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">French</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">Chinese</a>
+        <a class="dropdown-item lang" href="#" aria-label="Language" data-value="fr">Hindi</a>
          
       </div>
     </div>
@@ -112,17 +114,11 @@
             console.log(typeof myHtml);
            
             const myobj = {
-                "text":  myHtml,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
+                "text":  myHtml,
                 "source": prevLang,
                 "target": lang
             };
-            /*
-            const t1obj = {
-                'text':  t1,// "<html>I love New York in June</html>.  How about you?  That is a great question.  Try it.  Nope forget it ",
-                "source": prevLang,
-                "target": lang
-            };
-            */
+           
             prevLang = lang;
             var xmlhttp = new XMLHttpRequest();
 
@@ -159,9 +155,6 @@
         $(".lang").click(function(){
             var lang=$(this).data("value");
             console.log(lang);
-            //continent = $(this).attr("aria-label");
-            //console.log(continent);
-            //updateCountry(country);
             translateMe(lang);
         });
 

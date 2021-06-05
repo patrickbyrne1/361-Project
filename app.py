@@ -34,8 +34,9 @@ def convertCoords(aCoord):
     print(type(degCoord))
     if direction.lower() == 's' or direction.lower() == 'w':
         degCoord *= -1
-    # convert back to string and return
+        
     return str(format(degCoord, '.4f'))
+
 
 # find intro paragraph of page
 def intro(soup):
